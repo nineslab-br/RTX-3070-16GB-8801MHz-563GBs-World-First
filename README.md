@@ -27,10 +27,10 @@ Developed and validated by **Nines Lab - Brazil 🇧🇷**.
 
 ---
 
-## 📸 Proof of Concept: 15.16 GiB VRAM @ 8801 MHz & 218W Under Full Load
+## 📸 Proof of Concept: 15.56 GiB VRAM @ 8801 MHz & 218W Under Full Load
 
 ![nvtop 8801MHz Verification](assets/nvtop_8801mhz_proof.png)
-*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8801 MHz**, **GPU 1890 MHz**, **Power: 218W / 220W**, **15.159 GiB / 16.000 GiB VRAM allocated (94.7%)**, **GPU Util: 98%**, **Temp: 55°C**.*
+*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8801 MHz**, **GPU 1890 MHz**, **Power: 218W / 220W**, **15.559 GiB / 16.000 GiB VRAM allocated (97.2%)**, **GPU Util: 98%**, **Temp: 55°C**.*
 
 ---
 
@@ -81,7 +81,7 @@ Operating at 8801 MHz across its 256-bit bus, the modded RTX 3070 reaches **563.
 
 We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (GSQ-RCO / IQ3_M)`** with a **65,536 (64k) Context Window** via Ollama / llama.cpp on Linux Mint 21.3 (Kernel 6.8, Driver 615.71.09-open).
 
-* **Model Footprint:** **15,499 MiB (15.16 GiB VRAM allocated / 98%)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
+* **Model Footprint:** **15.56 GiB (15.559 GiB / 16.000 GiB VRAM allocated / 97.2%)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
 
 ![Qwen 27B Speedup](assets/qwen_27b_iq3m_speedup_en.png)
 
@@ -113,7 +113,7 @@ We verified 3D graphics stability using **Unigine Superposition** running at **8
 > 
 > **The true breakthrough of this mod is not excessive power draw, but:**
 > 1. **Complete Elimination of VRAM Stuttering in Modern Gaming:** In demanding modern titles (*The Last of Us Part I, Hogwarts Legacy, Cyberpunk 2077 with Ray Tracing, Alan Wake 2* at 1440p/4K Ultra), a factory 8GB RTX 3070 exceeds its VRAM buffer and is forced to swap textures across the PCIe bus, causing violent 1% Low drops, hitching, and texture pop-in. With **16 GB of physical VRAM**, ultra-resolution texture packs and Ray Tracing BVH trees stay 100% inside local memory, ensuring **completely smooth, stutter-free frametimes**.
-> 2. **Massive Local AI Workloads:** Runs heavy 27B parameter LLMs (such as Qwen 27B with a full 64k context window allocating 15.5 GB VRAM) that are completely out of reach for a stock 8GB card.
+> 2. **Massive Local AI Workloads:** Runs heavy 27B parameter LLMs (such as Qwen 27B with a full 64k context window allocating 15.56 GB VRAM) that are completely out of reach for a stock 8GB card.
 > 3. **Efficiency & Component Longevity:** Delivers all of this within the native 220W TDP at standard 1.35V, keeping the card remarkably cool and protecting the memory PHY.
 
 ---

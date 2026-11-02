@@ -27,10 +27,10 @@ Desenvolvido e validado pela **Nines Lab - Brazil 🇧🇷**.
 
 ---
 
-## 📸 Prova de Conceito: 15.16 GiB de VRAM @ 8801 MHz & 218W em Carga Máxima
+## 📸 Prova de Conceito: 15.56 GiB de VRAM @ 8801 MHz & 218W em Carga Máxima
 
 ![Verificação no nvtop a 8801MHz](assets/nvtop_8801mhz_proof.png)
-*Captura em tempo real no `nvtop` durante inferência pesada de modelo LLM de 27B: **MEM 8801 MHz**, **GPU 1890 MHz**, **Consumo: 218W / 220W**, **15.159 GiB / 16.000 GiB de VRAM alocados (94.7%)**, **Uso da GPU: 98%**, **Temp: 55°C**.*
+*Captura em tempo real no `nvtop` durante inferência pesada de modelo LLM de 27B: **MEM 8801 MHz**, **GPU 1890 MHz**, **Consumo: 218W / 220W**, **15.559 GiB / 16.000 GiB de VRAM alocados (97.2%)**, **Uso da GPU: 98%**, **Temp: 55°C**.*
 
 ---
 
@@ -81,7 +81,7 @@ Rodando a 8801 MHz no barramento de 256 bits, a RTX 3070 modificada atinge **563
 
 Avaliamos a performance real de geração de tokens utilizando o modelo **`Qwen 3.8 27B Uncensored (GSQ-RCO / IQ3_M)`** com **Janela de Contexto de 65.536 tokens (64k)** via Ollama / llama.cpp no Linux Mint 21.3 (Kernel 6.8, Driver 615.71.09-open).
 
-* **Consumo de VRAM:** **15.499 MiB (15.16 GiB de VRAM alocados / 98%)**. Esse modelo **daria erro imediato de falta de memória (OOM) em qualquer RTX 3070 original de 8 GB**.
+* **Consumo de VRAM:** **15.56 GiB (15.559 GiB / 16.000 GiB de VRAM alocados / 97.2%)**. Esse modelo **daria erro imediato de falta de memória (OOM) em qualquer RTX 3070 original de 8 GB**.
 
 ![Aceleração no Qwen 27B](assets/qwen_27b_iq3m_speedup_pt.png)
 
@@ -113,7 +113,7 @@ Validamos a estabilidade 3D contínua da placa no **Unigine Superposition** oper
 > 
 > **A maior vitória e o objetivo real deste mod não é consumir energia excessiva, mas sim:**
 > 1. **Fim do Stuttering em Jogos:** Em títulos modernos pesados (*The Last of Us Part I, Hogwarts Legacy, Cyberpunk 2077 com Ray Tracing, Alan Wake 2* em 1440p/4K), uma 3070 normal de 8 GB estoura a VRAM e é forçada a trocar texturas pela PCIe, causando travamentos de frametime e texturas borradas. Com **16 GB físicos**, todas as texturas Ultra e estruturas de Ray Tracing residem 100% na VRAM, entregando **taxas de 1% Low perfeitas e jogabilidade lisa sem engasgos**.
-> 2. **Inteligência Artificial Local Massiva:** Carrega modelos densos de 27B (como o Qwen 27B com contexto total de 64k alocando 15.5 GB de VRAM) que seriam impossíveis em uma 3070 original.
+> 2. **Inteligência Artificial Local Massiva:** Carrega modelos densos de 27B (como o Qwen 27B com contexto total de 64k alocando 15.56 GB de VRAM) que seriam impossíveis em uma 3070 original.
 > 3. **Eficiência e Durabilidade:** Tudo isso dentro do projeto térmico e elétrico original da placa (220W a 1.35V), fria, silenciosa e com o controlador PHY protegido.
 
 ---
