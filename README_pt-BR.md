@@ -17,7 +17,7 @@ Desenvolvido e validado pela **Nines Lab - Brazil 🇧🇷**.
 > **Hardware Testado e Homologado pela Nines Lab - Brazil:**
 > * **GPU Alvo:** Galax GeForce RTX 3070 LHR 1-Click OC (Originalmente 8 GB GDDR6)
 > * **PCI Device ID:** `10DE:2488` (Revisão GA104-302 LHR)
-> * **Procedência dos Módulos de VRAM:** 8x Chips Samsung K4ZAF325BM-HC16 (16 Gbit cada / 16 GB GDDR6 total), **colhidos e resgatados de uma AMD Radeon RX 6800 16GB doadora (RDNA2 Big Navi)** cujo chip gráfico havia falecido por dano de silício.
+> * **Procedência dos Módulos de VRAM:** 8x Chips Samsung K4ZAF325BM-HC16 (16 Gbit cada / 16 GB GDDR6 total), **colhidos e resgatados de uma AMD Radeon RX 6800 16GB doadora (RDNA2 Big Navi)** cujo chip gráfico havia sofrido um curto interno irreversível no núcleo (ASIC).
 > * **Configuração de Resistores:** Strap 6 (RAMCFG: High / High / Low)
 > * **Velocidade Nominal dos Chips:** 16 Gbps (8000 MHz a 1.35V JEDEC)
 > * **Frequência Diária Validada:** **8801 MHz (17.6 Gbps / 563.2 GB/s de largura de banda)**
@@ -52,8 +52,8 @@ No entanto, a utilização desse mod em placas desktop esbarra em limitações a
 
 ## ♻️ Procedência do Hardware: O Transplante da RX 6800 16GB Doadora
 
-Um dos aspectos mais fascinantes deste projeto de bancada é a procedência dos chips de memória:
-* Os 8 módulos de 16 Gbit **Samsung K4ZAF325BM-HC16** não foram comprados em lotes duvidosos da internet; eles foram **resgatados de uma placa-mãe de AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** cujo chip gráfico havia morrido por falha de silício.
+Um dos aspectos mais fascinantes deste projeto de bancada é a procedência dos módulos de memória:
+* Os 8 módulos de 16 Gbit **Samsung K4ZAF325BM-HC16** não foram comprados em lotes duvidosos da internet; eles foram **resgatados de uma placa-mãe de AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** cujo chip gráfico havia sofrido um curto interno irreversível no núcleo (ASIC).
 * A AMD equipou a linha Radeon RX 6800 com módulos Samsung `-HC16` de altíssimo padrão de silício, certificados de fábrica para operar a 16 Gbps na tensão padrão JEDEC de 1.35V.
 * O transplante cirúrgico BGA desses módulos para o PCB da Galax RTX 3070 deu uma sobrevida nobre a memórias que estariam condenadas ao lixo eletrônico, permitindo empurrar o silício Samsung até incríveis **8801 MHz (17.6 Gbps / 563.2 GB/s)** de forma 100% estável.
 
