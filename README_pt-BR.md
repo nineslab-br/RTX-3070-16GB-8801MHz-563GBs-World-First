@@ -2,7 +2,7 @@
 
 **🌐 Idioma:** [English](README.md) | **Português do Brasil**
 
-[![Marco: Pioneirismo Mundial 8801MHz](https://img.shields.io/badge/Marco-Primeiro%20do%20Mundo%208801%20MHz%20(563%20GB%2Fs)-gold.svg)]()
+[![Marco: Primeira RTX 3070 16GB @ 8801MHz](https://img.shields.io/badge/Marco-Primeira%20RTX%203070%2016GB%20%40%208801%20MHz%20(563%20GB%2Fs)-gold.svg)]()
 [![Desenvolvido por Nines Lab - Brazil](https://img.shields.io/badge/Desenvolvido%20Por-Nines%20Lab%20--%20Brazil%20%F0%9F%87%A7%F0%9F%87%B7-blue.svg)]()
 [![Testado em: Linux Mint 21.3](https://img.shields.io/badge/Testado%20em-Linux%20Mint%2021.3%20Virginia-brightgreen.svg)]()
 [![Arquitetura: Ampere GA104](https://img.shields.io/badge/Arquitetura-Ampere%20GA104-blueviolet.svg)]()
