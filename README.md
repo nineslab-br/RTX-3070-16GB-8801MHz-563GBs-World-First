@@ -20,7 +20,7 @@ Developed and validated by **Nines Lab - Brazil 🇧🇷**.
 > * **VRAM Hardware Provenance:** 8x Samsung K4ZAF325BM-HC16 modules (16 Gbit each / 16 GB GDDR6 total), **salvaged from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** with a damaged GPU core.
 > * **Hardware Straps:** Strap 6 (RAMCFG: High / High / Low)
 > * **Rated Memory Speed:** 16 Gbps (8000 MHz @ 1.35V JEDEC)
-> * **Peak Validated Daily Overclock:** **8801 MHz (17.6 Gbps / 563.2 GB/s bandwidth)**
+> * **Peak Validated Overclock:** **8801 MHz (17.6 Gbps / 563.2 GB/s bandwidth)**
 > * **Motherboard & CPU:** ASUS TUF GAMING B660M-PLUS D4 | Intel Core i7-12700K
 > * **OS:** Linux Mint 21.3 "Virginia" (Ubuntu 22.04 Jammy LTS base)
 > * **Kernel & Driver:** Linux Kernel `6.8.0-138-generic` | NVIDIA Open Kernel Module `615.71.09-open`

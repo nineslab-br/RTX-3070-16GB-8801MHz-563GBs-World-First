@@ -20,7 +20,7 @@ Desenvolvido e validado pela **Nines Lab - Brazil 🇧🇷**.
 > * **Procedência dos Módulos de VRAM:** 8x Chips Samsung K4ZAF325BM-HC16 (16 Gbit cada / 16 GB GDDR6 total), **colhidos e resgatados de uma AMD Radeon RX 6800 16GB doadora (RDNA2 Big Navi)** com o chip gráfico danificado.
 > * **Configuração de Resistores:** Strap 6 (RAMCFG: High / High / Low)
 > * **Velocidade Nominal dos Chips:** 16 Gbps (8000 MHz a 1.35V JEDEC)
-> * **Frequência Diária Validada:** **8801 MHz (17.6 Gbps / 563.2 GB/s de largura de banda)**
+> * **Frequência Máxima Validada:** **8801 MHz (17.6 Gbps / 563.2 GB/s de largura de banda)**
 > * **Placa-Mãe & Processador:** ASUS TUF GAMING B660M-PLUS D4 | Intel Core i7-12700K
 > * **Sistema Operacional:** Linux Mint 21.3 "Virginia" (Base Ubuntu 22.04 Jammy LTS)
 > * **Kernel & Driver:** Linux Kernel `6.8.0-138-generic` | Módulo Aberto NVIDIA `615.71.09-open`
@@ -69,7 +69,7 @@ Rodando a 8801 MHz no barramento de 256 bits, a RTX 3070 modificada atinge **563
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **RTX 3070 Original** | 256-bit | 8GB GDDR6 | 7001 MHz (14 Gbps) | **448.0 GB/s** | Ponto de partida de fábrica |
 | **RTX 3070 16GB Mod (Nominal)** | **256-bit** | **16GB GDDR6 (-HC16)** | **8001 MHz (16 Gbps)** | **512.0 GB/s** | +14.3% vs Stock |
-| **RTX 3070 16GB Mod (Diário Validado)**| **256-bit** | **16GB GDDR6 (RX 6800)**| **8801 MHz (17.6 Gbps)**| **563.2 GB/s** | **+25.7% vs Stock (Recorde)** |
+| **RTX 3070 16GB Mod (Recorde Mundial)**| **256-bit** | **16GB GDDR6 (RX 6800)**| **8801 MHz (17.6 Gbps)**| **563.2 GB/s** | **+25.7% vs Stock (Recorde)** |
 | **RTX 3080** | 320-bit | 10GB GDDR6X | 9502 MHz (19 Gbps) | **760.3 GB/s** | **74.1% da banda da RTX 3080** |
 | **RTX 3090** | 384-bit | 24GB GDDR6X | 9752 MHz (19.5 Gbps) | **936.2 GB/s** | **60.2% da banda da RTX 3090** |
 
