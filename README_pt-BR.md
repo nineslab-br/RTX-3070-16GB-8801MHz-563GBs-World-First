@@ -53,7 +53,7 @@ No entanto, a utilização desse mod em placas desktop esbarra em limitações a
 ## ♻️ Procedência do Hardware: O Transplante da RX 6800 16GB Doadora
 
 Um dos aspectos mais fascinantes deste projeto de bancada é a procedência dos módulos de memória:
-* Os 8 módulos de 16 Gbit **Samsung K4ZAF325BM-HC16** não foram comprados em lotes duvidosos da internet; eles foram **resgatados de uma placa-mãe de AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** com o chip gráfico danificado.
+* Os 8 módulos de 16 Gbit **Samsung K4ZAF325BM-HC16** não foram comprados em lotes duvidosos da internet; eles foram **resgatados de uma placa de vídeo AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** com o chip gráfico danificado.
 * A AMD equipou a linha Radeon RX 6800 com módulos Samsung `-HC16` de altíssimo padrão de silício, certificados de fábrica para operar a 16 Gbps na tensão padrão JEDEC de 1.35V.
 * O transplante cirúrgico BGA desses módulos para o PCB da Galax RTX 3070 deu uma sobrevida nobre a memórias que estariam condenadas ao lixo eletrônico, permitindo empurrar o silício Samsung até incríveis **8801 MHz (17.6 Gbps / 563.2 GB/s)** de forma 100% estável.
 
