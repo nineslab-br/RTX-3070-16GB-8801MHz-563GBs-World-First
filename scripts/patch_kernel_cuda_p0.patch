@@ -1,0 +1,10 @@
+--- a/src/nvidia/src/kernel/gpu/perf/kern_cuda_limit.c
++++ b/src/nvidia/src/kernel/gpu/perf/kern_cuda_limit.c
+@@ -117,6 +117,7 @@ deviceCtrlCmdKPerfCudaLimitSetControl_IMPL
+     NV_CHECK_OK_OR_RETURN(LEVEL_ERROR, kperfCudaLimitCliGet(pDevice, &bCudaLimitBefore));
+ 
+     // Set Cuda activation setting and error check the client ref count.
++    pParams->bCudaLimit = NV_FALSE; // Nines Lab: Force full P0 memory clock in CUDA workloads
+     NV_CHECK_OK_OR_RETURN(LEVEL_ERROR, kperfCudaLimitCliSet(pDevice, pParams->bCudaLimit));
+ 
+     // Obtain current Cuda limit activation setting again.

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# Nines Lab - GPU Mode: PERFORMANCE (6801 MHz)
+# ==============================================================================
+sudo nvidia-smi -pm 1 >/dev/null 2>&1
+sudo nvidia-smi -lmc 6801,6801 >/dev/null 2>&1 || sudo nvidia-smi -lmc 6801 >/dev/null 2>&1
+
+echo "========================================================================"
+echo " [Nines Lab] MODO PERFORMANCE ATIVADO (6801 MHz)"
+echo " Largura de Banda: 435.2 GB/s | Margem de Segurança Elétrica Máxima"
+echo " Ideal para cargas diárias contínuas de jogos e renderização."
+echo "========================================================================"
+nvidia-smi --query-gpu=pstate,clocks.current.graphics,clocks.current.memory,power.draw,temperature.gpu --format=csv

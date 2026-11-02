@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# Nines Lab - GPU Mode: ECO (405 MHz / P8)
+# ==============================================================================
+sudo nvidia-smi -pm 1 >/dev/null 2>&1
+sudo nvidia-smi -lmc 405,405 >/dev/null 2>&1 || sudo nvidia-smi -lmc 405 >/dev/null 2>&1
+
+echo "========================================================================"
+echo " [Nines Lab] MODO ECO ATIVADO (405 MHz / P8)"
+echo " Consumo: ~11.8W | Temperatura: ~24°C | Fans: 0 RPM Silencioso"
+echo " Zero desgaste térmico/elétrico no controlador PHY e nas memórias."
+echo "========================================================================"
+nvidia-smi --query-gpu=pstate,clocks.current.graphics,clocks.current.memory,power.draw,temperature.gpu --format=csv

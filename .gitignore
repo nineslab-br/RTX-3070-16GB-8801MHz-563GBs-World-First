@@ -1,0 +1,17 @@
+# Ignore binary firmware images and proprietary VBIOS dumps (DMCA Compliance)
+*.rom
+*.bin
+*.dump
+
+# Ignore logs and telemetry caches
+*.log
+*.swp
+*.bak
+
+# Ignore Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
