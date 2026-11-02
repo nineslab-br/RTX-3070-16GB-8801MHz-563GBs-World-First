@@ -17,7 +17,7 @@ Developed and validated by **Nines Lab - Brazil 🇧🇷**.
 > **Hardware Tested & Verified by Nines Lab - Brazil:**
 > * **Target GPU:** Galax GeForce RTX 3070 LHR 1-Click OC (Originally 8 GB GDDR6)
 > * **PCI Device ID:** `10DE:2488` (GA104-302 LHR revision)
-> * **VRAM Hardware Provenance:** 8x Samsung K4ZAF325BM-HC16 modules (16 Gbit each / 16 GB GDDR6 total), **salvaged from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** whose GPU core suffered an unrecoverable internal ASIC short.
+> * **VRAM Hardware Provenance:** 8x Samsung K4ZAF325BM-HC16 modules (16 Gbit each / 16 GB GDDR6 total), **salvaged from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** with a damaged GPU core.
 > * **Hardware Straps:** Strap 6 (RAMCFG: High / High / Low)
 > * **Rated Memory Speed:** 16 Gbps (8000 MHz @ 1.35V JEDEC)
 > * **Peak Validated Daily Overclock:** **8801 MHz (17.6 Gbps / 563.2 GB/s bandwidth)**
@@ -53,7 +53,7 @@ However, running this mod on desktop cards reveals architectural constraints:
 ## ♻️ Hardware Provenance: The RX 6800 16GB Transfusion
 
 One of the most remarkable technical aspects of this mod is the origin of the memory modules:
-* The eight 16 Gbit **Samsung K4ZAF325BM-HC16** modules were not acquired from questionable gray-market brokers; they were **harvested from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** whose GPU core suffered an unrecoverable internal ASIC short.
+* The eight 16 Gbit **Samsung K4ZAF325BM-HC16** modules were not acquired from questionable gray-market brokers; they were **harvested from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** with a damaged GPU core.
 * AMD specified the Radeon RX 6800 series with premium-binned Samsung `-HC16` modules, factory-certified for 16 Gbps operation at stock JEDEC 1.35V.
 * The surgical BGA rework of these donor chips onto the Galax RTX 3070 PCB gave new life to high-grade VRAM that would have otherwise ended up as e-waste, allowing this hardware to be pushed to an astounding **8801 MHz (17.6 Gbps / 563.2 GB/s)** with 100% stability.
 
