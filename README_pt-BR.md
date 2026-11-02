@@ -125,9 +125,9 @@ Disponibilizamos três perfis nativos:
 ### 1. `gpu-eco` — 405 MHz (Estado P8)
 * **Comando:** `gpu-eco`
 * **Clock de Memória:** 405 MHz | **Banda:** 25.9 GB/s | **Consumo Idle:** **~11.8 W** | **Temp:** **~24°C** (0 RPM)
-* **Prós:** Consumo elétrico mínimo absoluto; zero estresse elétrico e térmico no controlador PHY e nas memórias; silêncio total; permite entrar e sair limpo da suspensão S3 (Sleep).
-* **Contras:** Performance gráfica reduzida; não destinado a jogos ou LLMs.
-* **Armadilhas (Pitfalls):** Não tente decodificar vídeos por hardware NVDEC na 3070 enquanto travado em 405 MHz (a BIOS física da Galax tem o bug de colisão de escrita no P8). Use o vídeo integrado da placa-mãe para o desktop 2D, ou ative o `gpu-perf`/`gpu-ultra` antes de abrir reprodutores pesados.
+* **Prós:** Consumo elétrico mínimo absoluto (~11.8W); zero estresse térmico ou elétrico no controlador PHY e nas memórias; silêncio absoluto (ventoinhas desligadas); permite entrar e retornar da suspensão S3 (Sleep) sem falhas. Como o clock fica travado estaticamente em 405 MHz via software, a GPU **não tenta realizar transições dinâmicas para P5 (810 MHz) ou P3 (5001 MHz), impedindo os travamentos/congelamentos da VBIOS original mesmo ao abrir vídeos**.
+* **Contras:** Performance severamente limitada pela largura de banda reduzida de 25.9 GB/s. A reprodução de vídeos sofre perda de quadros (baixo FPS), jogos rodam com taxa de quadros injogável e a taxa de tokens em LLMs despenca.
+* **Comportamento na Prática:** O sistema permanece **100% estável e não trava nem crasha a placa**, apenas opera com lentidão proposital devido à falta de largura de banda. Ideal para deixar o PC ligado fazendo downloads, lendo documentos/código, repouso noturno ou suspensão S3. Ao abrir vídeos em alta resolução, jogos ou iniciar inferência de IA, basta alternar para `gpu-perf` ou `gpu-ultra`.
 
 ### 2. `gpu-perf` — 6801 MHz (Modo de Segurança Diário)
 * **Comando:** `gpu-perf`

@@ -125,9 +125,9 @@ We provide three native software-controlled power modes:
 ### 1. `gpu-eco` — 405 MHz (P8 State)
 * **Command:** `gpu-eco`
 * **Memory Clock:** 405 MHz | **Bandwidth:** 25.9 GB/s | **Power Draw:** **~11.8 W** | **Temp:** **~24°C** (0 RPM)
-* **Pros:** Minimum power consumption; zero electrical and thermal stress on GDDR6 PHY and memory chips; perfectly silent; allows clean S3 sleep and wake.
-* **Cons:** Low graphical and compute throughput; not intended for gaming or LLM execution.
-* **Pitfalls:** Do not attempt hardware NVDEC video decoding on the 3070 while locked at 405 MHz (the stock Galax BIOS has a write collision bug on P8). Use your host iGPU for 2D displays, or switch to `gpu-perf`/`gpu-ultra` prior to opening hardware video players.
+* **Pros:** Absolute minimal power consumption (~11.8W); zero thermal or electrical stress on the GDDR6 PHY and memory chips; perfectly silent (0 RPM fans); flawless S3 sleep and wake resume. Because memory is statically locked at 405 MHz via software, the GPU **never attempts dynamic transitions to intermediate states (P5 810 MHz / P3 5001 MHz), completely preventing stock VBIOS freezes/crashes even when opening videos**.
+* **Cons:** Severe throughput limitation due to the narrow 25.9 GB/s memory bandwidth. Video playback suffers from frame drops (low FPS), games run with unplayable framerates, and LLM token generation drops to a crawl.
+* **Real-World Behavior:** The system remains **100% rock-solid and will NOT crash the card**, operating with deliberate slowness purely due to bandwidth constraints. Ideal for background downloading, reading documents/code, overnight idle, or S3 suspend. When playing high-resolution video, gaming, or running local AI, simply switch to `gpu-perf` or `gpu-ultra`.
 
 ### 2. `gpu-perf` — 6801 MHz (Safety Performance State)
 * **Command:** `gpu-perf`
