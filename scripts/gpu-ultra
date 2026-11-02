@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Nines Lab - GPU Mode: ULTRA (8001 MHz / 16 Gbps Nativo Samsung K4ZAF325BM-HC16)
+# Nines Lab - GPU Mode: ULTRA (8801 MHz / 563.2 GB/s — Samsung K4ZAF325BM-HC16)
 # ==============================================================================
 sudo nvidia-smi -pm 1 >/dev/null 2>&1
-sudo nvidia-smi -lmc 8001,8001 >/dev/null 2>&1 || sudo nvidia-smi -lmc 8001 >/dev/null 2>&1
+sudo nvidia-smi -lmc 8801,8801 >/dev/null 2>&1 || sudo nvidia-smi -lmc 8801 >/dev/null 2>&1
 
 echo "========================================================================"
-echo " [Nines Lab] MODO ULTRA ATIVADO (8001 MHz / 16 Gbps / P0)"
-echo " Largura de Banda Máxima: 512.0 GB/s (67.3% de uma RTX 3080 / 54.7% de uma 3090)"
+echo " [Nines Lab] MODO ULTRA ATIVADO (8801 MHz / 17.6 Gbps / P0)"
+echo " Largura de Banda Máxima: 563.2 GB/s (74.1% de uma RTX 3080 / 60.2% de uma 3090)"
 echo " Potência: 220W TDP | Otimizado para Modelos Grandes de IA e LLMs (64k Contexto)"
 echo "========================================================================"
 nvidia-smi --query-gpu=pstate,clocks.current.graphics,clocks.current.memory,power.draw,temperature.gpu --format=csv

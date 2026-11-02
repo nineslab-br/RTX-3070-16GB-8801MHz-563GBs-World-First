@@ -1,36 +1,36 @@
-# RTX 3070 16GB Mod @ 9001 MHz (576 GB/s) — World-First Milestone & Engineering Guide
+# RTX 3070 16GB Mod @ 8801 MHz (563 GB/s) — World-First Milestone & Engineering Guide
 
 **🌐 Language:** **English** | [Português do Brasil](README_pt-BR.md)
 
-[![Milestone: World First 9001MHz](https://img.shields.io/badge/Milestone-World's%20First%209001%20MHz%20(576%20GB%2Fs)-gold.svg)]()
+[![Milestone: World First 8801MHz](https://img.shields.io/badge/Milestone-World's%20First%208801%20MHz%20(563%20GB%2Fs)-gold.svg)]()
 [![Developed by Nines Lab - Brazil](https://img.shields.io/badge/Developed%20By-Nines%20Lab%20--%20Brazil%20%F0%9F%87%A7%F0%9F%87%B7-blue.svg)]()
 [![Tested On: Linux Mint 21.3](https://img.shields.io/badge/Tested%20On-Linux%20Mint%2021.3%20Virginia-brightgreen.svg)]()
 [![Architecture: Ampere GA104](https://img.shields.io/badge/Architecture-Ampere%20GA104-blueviolet.svg)]()
 [![VRAM: 16 GB RX 6800 Donor](https://img.shields.io/badge/VRAM-16%20GB%20Samsung%20HC16%20(RX%206800%20Donor)-8b5cf6.svg)]()
-[![Bandwidth: 576 GB/s](https://img.shields.io/badge/Bandwidth-576.0%20GB%2Fs%20(9001%20MHz)-10b981.svg)]()
+[![Bandwidth: 563 GB/s](https://img.shields.io/badge/Bandwidth-563.2%20GB%2Fs%20(8801%20MHz)-10b981.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Engineering documentation, reverse-engineering findings, scripts, and real-world LLM benchmarks for the **16GB Modded NVIDIA GeForce RTX 3070** operating at **8001 MHz (16 Gbps / 512 GB/s)** and pushed to an unprecedented **9001 MHz (18 Gbps / 576 GB/s)** on Linux.
+Engineering documentation, reverse-engineering findings, control scripts, and real-world LLM benchmarks for the **16GB Modded NVIDIA GeForce RTX 3070** running at **8801 MHz (17.6 Gbps / 563.2 GB/s)** on Linux.
 
 Developed and validated by **Nines Lab - Brazil 🇧🇷**.
 
 > **Hardware Tested & Verified by Nines Lab - Brazil:**
 > * **Target GPU:** Galax GeForce RTX 3070 LHR 1-Click OC (Originally 8 GB GDDR6)
 > * **PCI Device ID:** `10DE:2488` (GA104-302 LHR revision)
-> * **VRAM Hardware Provenance:** 8x Samsung K4ZAF325BM-HC16 modules (16 Gbit each / 16 GB GDDR6 total), **salvaged from a dead-core AMD Radeon RX 6800 16GB (RDNA2)** graphics card.
+> * **VRAM Hardware Provenance:** 8x Samsung K4ZAF325BM-HC16 modules (16 Gbit each / 16 GB GDDR6 total), **salvaged from a dead-core AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** graphics card.
 > * **Hardware Straps:** Strap 6 (RAMCFG: High / High / Low)
 > * **Rated Memory Speed:** 16 Gbps (8000 MHz @ 1.35V JEDEC)
-> * **Peak Validated Overclock:** **9001 MHz (18 Gbps / 576.0 GB/s bandwidth)**
+> * **Peak Validated Daily Overclock:** **8801 MHz (17.6 Gbps / 563.2 GB/s bandwidth)**
 > * **Motherboard & CPU:** ASUS TUF GAMING B660M-PLUS D4 | Intel Core i7-12700K
 > * **OS:** Linux Mint 21.3 "Virginia" (Ubuntu 22.04 Jammy LTS base)
 > * **Kernel & Driver:** Linux Kernel `6.8.0-138-generic` | NVIDIA Open Kernel Module `615.71.09-open`
 
 ---
 
-## 📸 Proof of Concept: 15.11 GiB VRAM @ 8001 MHz & 219W Under Full Load
+## 📸 Proof of Concept: 15.16 GiB VRAM @ 8801 MHz & 218W Under Full Load
 
-![nvtop 8001MHz Verification](assets/nvtop_8001mhz_proof.jpg)
-*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8001 MHz**, **GPU 1890 MHz**, **Power: 219W / 220W**, **15.11 GiB / 16.00 GiB VRAM allocated (97%)**, **GPU Util: 97%**.*
+![nvtop 8801MHz Verification](assets/nvtop_8801mhz_proof.png)
+*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8801 MHz**, **GPU 1890 MHz**, **Power: 218W / 220W**, **15.159 GiB / 16.000 GiB VRAM allocated (94.7%)**, **GPU Util: 98%**, **Temp: 55°C**.*
 
 ---
 
@@ -46,7 +46,7 @@ However, running this mod on desktop cards reveals architectural constraints:
 ### The Engineering Solution (Scenario B):
 * The Samsung **`K4ZAF325BM-HC16`** chips are factory-certified by Samsung for **16 Gbps (8000 MHz)** at stock 1.35V.
 * By applying `factory_memory_offset_mhz` to the official VBIOS factory clock record (`P+0x98`) and patching the NVIDIA open kernel driver (`kern_cuda_limit.c`) to disable the artificial CUDA P2 downclock, **both 3D Gaming and CUDA AI Workloads run equalized at full speed**.
-* The card operates rock-solid at **8001 MHz (512.0 GB/s)** daily, and scales up to **9001 MHz (576.0 GB/s)** under extreme compute benchmarks.
+* The card operates rock-solid at **8801 MHz (563.2 GB/s)** daily, completely validated under 218W sustained load.
 
 ---
 
@@ -55,25 +55,25 @@ However, running this mod on desktop cards reveals architectural constraints:
 One of the most remarkable technical aspects of this mod is the origin of the memory silicon:
 * The eight 16 Gbit **Samsung K4ZAF325BM-HC16** modules were not acquired from random gray-market brokers; they were **harvested from a donor AMD Radeon RX 6800 16GB (RDNA2 Big Navi)** whose GPU core died of silicon failure.
 * AMD specified the Radeon RX 6800 series with premium-binned Samsung `-HC16` modules, factory-certified for 16 Gbps operation at stock JEDEC 1.35V.
-* The surgical BGA rework of these donor chips onto the Galax RTX 3070 PCB gave new life to high-grade VRAM that would have otherwise ended up as e-waste, allowing this hardware to be pushed to an astounding **9001 MHz (18 Gbps / 576.0 GB/s)** with 100% stability.
+* The surgical BGA rework of these donor chips onto the Galax RTX 3070 PCB gave new life to high-grade VRAM that would have otherwise ended up as e-waste, allowing this hardware to be pushed to an astounding **8801 MHz (17.6 Gbps / 563.2 GB/s)** with 100% stability.
 
 ---
 
 ## 📊 VRAM Bandwidth Comparison: 3070 16GB Mod vs Ampere Lineup
 
-Operating at 8001 MHz and 9001 MHz across its 256-bit bus, the modded RTX 3070 achieves:
+Operating at 8801 MHz across its 256-bit bus, the modded RTX 3070 reaches **563.2 GB/s**:
 
 ![VRAM Bandwidth Comparison](assets/vram_bandwidth_comparison_en.png)
 
 | Graphics Card | Bus Width | Memory Type | Memory Clock | Memory Bandwidth | Comparison vs Modded 3070 16GB |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **RTX 3070 Stock** | 256-bit | 8GB GDDR6 | 7001 MHz (14 Gbps) | **448.0 GB/s** | Baseline reference |
-| **RTX 3070 16GB Mod (Nominal)** | **256-bit** | **16GB GDDR6 (-HC16)** | **8001 MHz (16 Gbps)** | **512.0 GB/s** | **+14.3% vs Stock** |
-| **RTX 3070 16GB Mod (World Record)**| **256-bit** | **16GB GDDR6 (RX 6800)**| **9001 MHz (18 Gbps)** | **576.0 GB/s** | **+28.6% vs Stock (Record)** |
-| **RTX 3080** | 320-bit | 10GB GDDR6X | 9502 MHz (19 Gbps) | **760.3 GB/s** | **75.8% of RTX 3080 bandwidth** |
-| **RTX 3090** | 384-bit | 24GB GDDR6X | 9752 MHz (19.5 Gbps) | **936.2 GB/s** | **61.5% of RTX 3090 bandwidth** |
+| **RTX 3070 16GB Mod (Nominal)** | **256-bit** | **16GB GDDR6 (-HC16)** | **8001 MHz (16 Gbps)** | **512.0 GB/s** | +14.3% vs Stock |
+| **RTX 3070 16GB Mod (World Record)**| **256-bit** | **16GB GDDR6 (RX 6800)**| **8801 MHz (17.6 Gbps)**| **563.2 GB/s** | **+25.7% vs Stock (Record)** |
+| **RTX 3080** | 320-bit | 10GB GDDR6X | 9502 MHz (19 Gbps) | **760.3 GB/s** | **74.1% of RTX 3080 bandwidth** |
+| **RTX 3090** | 384-bit | 24GB GDDR6X | 9752 MHz (19.5 Gbps) | **936.2 GB/s** | **60.2% of RTX 3090 bandwidth** |
 
-> **Key Takeaway:** At 9001 MHz, a 220W 256-bit card delivers **75.8% of an RTX 3080's bandwidth** and **over 61% of a flagship 384-bit RTX 3090**, with an ultra-cool thermal footprint.
+> **Key Takeaway:** At 8801 MHz, a 220W 256-bit card delivers **74.1% of an RTX 3080's bandwidth** and **over 60% of a flagship 384-bit RTX 3090**, with an ultra-cool thermal footprint.
 
 ---
 
@@ -81,20 +81,40 @@ Operating at 8001 MHz and 9001 MHz across its 256-bit bus, the modded RTX 3070 a
 
 We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (GSQ-RCO / IQ3_M)`** with a **65,536 (64k) Context Window** via Ollama / llama.cpp on Linux Mint 21.3 (Kernel 6.8, Driver 615.71.09-open).
 
-* **Model Footprint:** **15,499 MiB (15.11 GiB VRAM allocated / 97%)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
+* **Model Footprint:** **15,499 MiB (15.16 GiB VRAM allocated / 98%)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
 
 ![Qwen 27B Speedup](assets/qwen_27b_iq3m_speedup_en.png)
 
 ### Generation Speed Scaling Across All Memory Frequencies:
 
-| Test Prompt Category | 6801 MHz (Stock Compute P2) | 8001 MHz (16 Gbps Samsung -HC16) | 9001 MHz (World Record Overclock) | Total Speedup vs Stock |
+| Test Prompt Category | 6801 MHz (Stock Compute P2) | 7301 MHz (+500 MHz Offset) | 8801 MHz (World Record Overclock) | Total Speedup vs Stock |
 | :--- | :---: | :---: | :---: | :---: |
-| **Small (Recursive Logic)** | 53.73 t/s | 61.42 t/s | **65.58 tokens/s** | **+22.05%** |
-| **Medium (Linux Conceptual / OS)** | 41.46 t/s | 48.15 t/s | **53.12 tokens/s** | **+28.12%** |
-| **Large (C Red-Black Tree Implementation)** | 47.31 t/s | 52.84 t/s | **56.88 tokens/s** | **+20.22%** |
-| **OVERALL AVERAGE THROUGHPUT** | **47.50 t/s** | **54.14 t/s** | **57.65 tokens/s** | **+21.37%** |
+| **Small (Recursive Logic)** | 53.73 t/s | 55.51 t/s | **64.21 tokens/s** | **+19.51%** |
+| **Medium (Linux Conceptual / OS)** | 41.46 t/s | 43.47 t/s | **51.85 tokens/s** | **+25.06%** |
+| **Large (C Red-Black Tree Implementation)** | 47.31 t/s | 47.66 t/s | **55.40 tokens/s** | **+17.10%** |
+| **OVERALL AVERAGE THROUGHPUT** | **47.50 t/s** | **48.88 t/s** | **57.15 tokens/s** | **+20.32%** |
 
-* **Full 64k Pre-Allocated KV-Cache Stress:** Operating under maximum context saturation (`-c 65536`), generation sustained **28.49 tokens/second** at **218W** and **38°C–52°C**.
+* **Full 64k Pre-Allocated KV-Cache Stress:** Operating under maximum context saturation (`-c 65536`), generation sustained **28.10 tokens/second** at **218W** and **38°C–52°C**.
+
+---
+
+## 🎮 3D Validation & Power Envelope (220W / 1x 8-Pin Header)
+
+We verified 3D graphics stability using **Unigine Superposition** running at **8801 MHz (563.2 GB/s)**:
+
+| Resolution / Preset | Official Score | Average FPS | Verification Link |
+| :--- | :---: | :---: | :--- |
+| **1080p EXTREME** | **7,113 points** | 53.20 FPS | 🔗 [Certified HWBOT Submission](https://hwbot.org/submission/6092224) |
+| **4K OPTIMIZED** | **9,848 points** | 73.66 FPS | Completed with 100% stability |
+| **8K OPTIMIZED** | **4,436 points** | 33.18 FPS | Completed with 100% stability |
+
+> **Engineering Note — The 220W Envelope & The True Value of the 16GB Mod:**  
+> Synthetic 3D benchmark scores reflect the physical power delivery of our Galax 1-Click OC model, equipped with a **single 8-pin PCIe power header and a strict 220W TDP limit**. Leading scores on HWBOT belong to custom triple-slot PCBs with dual/triple 8-pin connectors running 280W–320W BIOSes or shunt mods.  
+> 
+> **The true breakthrough of this mod is not excessive power draw, but:**
+> 1. **Complete Elimination of VRAM Stuttering in Modern Gaming:** In demanding modern titles (*The Last of Us Part I, Hogwarts Legacy, Cyberpunk 2077 with Ray Tracing, Alan Wake 2* at 1440p/4K Ultra), a factory 8GB RTX 3070 exceeds its VRAM buffer and is forced to swap textures across the PCIe bus, causing violent 1% Low drops, hitching, and texture pop-in. With **16 GB of physical VRAM**, ultra-resolution texture packs and Ray Tracing BVH trees stay 100% inside local memory, ensuring **completely smooth, stutter-free frametimes**.
+> 2. **Massive Local AI Workloads:** Runs heavy 27B parameter LLMs (such as Qwen 27B with a full 64k context window allocating 15.5 GB VRAM) that are completely out of reach for a stock 8GB card.
+> 3. **Efficiency & Component Longevity:** Delivers all of this within the native 220W TDP at standard 1.35V, keeping the card remarkably cool and protecting the memory PHY.
 
 ---
 
@@ -116,11 +136,11 @@ We provide three native software-controlled power modes:
 * **Cons:** Idles at ~40W continuously if left active when away from the PC.
 * **Pitfalls:** Consumes ~28W more than `gpu-eco` when idle. Best practice: switch back to `gpu-eco` when stepping away from the desk.
 
-### 3. `gpu-ultra` / `gpu-max` — 8001 to 9001 MHz (Maximum Performance)
+### 3. `gpu-ultra` / `gpu-max` — 8801 MHz (Peak Performance)
 * **Command:** `gpu-ultra`
-* **Memory Clock:** 8001 – 9001 MHz | **Bandwidth:** **512.0 – 576.0 GB/s** | **Power Draw:** ~45.0 W (Idle) / ~219W (Full Load) | **Temp:** ~32°C (Idle) / ~52°C (Full Load)
-* **Pros:** Unleashes up to 18 Gbps; **+28.6% bandwidth boost**; yields **over 21% faster LLM token generation** on large contexts; zero overvoltage degradation since the card runs at stock 1.35V.
-* **Cons:** Peak power consumption under full compute load (~219W).
+* **Memory Clock:** 8801 MHz | **Bandwidth:** **563.2 GB/s** | **Power Draw:** ~45.0 W (Idle) / ~218W (Full Load) | **Temp:** ~32°C (Idle) / ~52°C (Full Load)
+* **Pros:** Unleashes 17.6 Gbps; **+25.7% bandwidth boost**; yields **over 20% faster LLM token generation** on large contexts; zero overvoltage degradation since the card runs at stock 1.35V.
+* **Cons:** Peak power consumption under full compute load (~218W).
 * **Pitfalls:** None. The card runs exceptionally cool (under 55°C) and operates completely within electrical safety parameters.
 
 ---
@@ -133,7 +153,7 @@ All tools and scripts are located in the [`scripts/`](scripts/) directory:
 | :--- | :--- |
 | **[`scripts/gpu-eco`](scripts/gpu-eco)** | Locks memory to 405 MHz (P8) for idle, work, and S3 suspend. |
 | **[`scripts/gpu-perf`](scripts/gpu-perf)** | Locks memory to 6801 MHz for stable everyday gaming and compute. |
-| **[`scripts/gpu-ultra`](scripts/gpu-ultra)** | Locks memory to 8001 MHz (16 Gbps) / 9001 MHz for maximum AI inference and 4K gaming. |
+| **[`scripts/gpu-ultra`](scripts/gpu-ultra)** | Locks memory to 8801 MHz (563.2 GB/s) for maximum AI inference and 4K gaming. |
 | **[`scripts/setup_nines_modes.sh`](scripts/setup_nines_modes.sh)** | Automated setup: installs commands to `/usr/local/bin/`, configures passwordless sudoers rules, boot service, and desktop shortcuts. |
 | **[`scripts/patch_kernel_cuda_p0.patch`](scripts/patch_kernel_cuda_p0.patch)** | Kernel driver patch for `open-gpu-kernel-modules` (`kern_cuda_limit.c`) to disable CUDA P2 downclocking. |
 | **[`scripts/patch_vbios_8001mhz.py`](scripts/patch_vbios_8001mhz.py)** | Offline tool to set `factory_memory_offset_mhz` via Vix-Editor and generate normalized payloads. |
