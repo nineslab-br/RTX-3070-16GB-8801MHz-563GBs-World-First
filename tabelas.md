@@ -2,7 +2,7 @@
 
 **🌐 Idioma:** [English](tables.md) | **Português do Brasil**
 
-[![Marco: Pioneirismo Mundial 8001MHz](https://img.shields.io/badge/Marco-Primeiro%20do%20Mundo%208001%20MHz%20(512%20GB%2Fs)-gold.svg)]()
+[![Marco: Pioneirismo Mundial 8801MHz](https://img.shields.io/badge/Marco-Primeiro%20do%20Mundo%208801%20MHz%20(563%20GB%2Fs)-gold.svg)]()
 [![Desenvolvido por Nines Lab](https://img.shields.io/badge/Desenvolvido%20Por-Nines%20Lab-blue.svg)]()
 [![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow.svg)](LICENSE)
 

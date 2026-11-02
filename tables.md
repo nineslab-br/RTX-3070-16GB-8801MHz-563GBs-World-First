@@ -2,7 +2,7 @@
 
 **🌐 Language:** **English** | [Português do Brasil](tabelas.md)
 
-[![Milestone: World First 8001MHz](https://img.shields.io/badge/Milestone-World's%20First%208001%20MHz%20(512%20GB%2Fs)-gold.svg)]()
+[![Milestone: World First 8801MHz](https://img.shields.io/badge/Milestone-World's%20First%208801%20MHz%20(563%20GB%2Fs)-gold.svg)]()
 [![Developed by Nines Lab](https://img.shields.io/badge/Developed%20By-Nines%20Lab-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 

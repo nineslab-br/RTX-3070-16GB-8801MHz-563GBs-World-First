@@ -98,8 +98,8 @@ EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=GPU Modo Ultra (8001 MHz)
-Comment=Sobe a RTX 3070 para 8001 MHz (16 Gbps / 512 GB/s)
+Name=GPU Modo Ultra (8801 MHz)
+Comment=Sobe a RTX 3070 para 8801 MHz (17.6 Gbps / 563.2 GB/s)
 Exec=/usr/local/bin/gpu-ultra
 Icon=applications-games
 Terminal=true
