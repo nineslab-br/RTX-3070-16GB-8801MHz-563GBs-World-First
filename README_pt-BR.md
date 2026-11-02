@@ -95,7 +95,6 @@ Avaliamos a performance real de geração de tokens utilizando o modelo **`Qwen 
 | **MÉDIA GERAL DE VELOCIDADE** | **47.50 t/s** | **54.14 t/s** | **57.65 tokens/s** | **+21.37%** |
 
 * **Estresse de KV-Cache com 64k Ativo:** Sob saturação total do contexto de 64k (`-c 65536`), a velocidade sustentada foi de **28.49 tokens/segundo** a **218W** e temperatura controlada entre **38°C e 52°C**.
-* **Suíte de Computação do Geekbench 6:** Completou com 100% de sucesso todos os 8 testes pesados de computação Vulkan (Partículas, Gaussian Blur, Detecção de Bordas, Stereo Matching) a **9001 MHz com zero erros**.
 
 ---
 

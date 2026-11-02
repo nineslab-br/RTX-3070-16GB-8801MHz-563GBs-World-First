@@ -95,7 +95,6 @@ We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (
 | **OVERALL AVERAGE THROUGHPUT** | **47.50 t/s** | **54.14 t/s** | **57.65 tokens/s** | **+21.37%** |
 
 * **Full 64k Pre-Allocated KV-Cache Stress:** Operating under maximum context saturation (`-c 65536`), generation sustained **28.49 tokens/second** at **218W** and **38°C–52°C**.
-* **Geekbench 6 Compute Suite:** Completed all 8 Vulkan computation workloads (Particle Physics, Gaussian Blur, Stereo Matching, Feature Matching) at **9001 MHz with 100% pass and zero errors**.
 
 ---
 
