@@ -27,10 +27,10 @@ Developed and validated by **Nines Lab** (Brazil 🇧🇷).
 
 ---
 
-## 📸 Proof of Concept: 15.5 GB VRAM @ 8001 MHz & 219W Under Full Load
+## 📸 Proof of Concept: 15.11 GiB VRAM @ 8001 MHz & 219W Under Full Load
 
 ![nvtop 8001MHz Verification](assets/nvtop_8001mhz_proof.jpg)
-*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8001 MHz**, **GPU 1890 MHz**, **Power: 219W / 220W**, **15.11 GB / 16.00 GB VRAM allocated**, **GPU Util: 97%**.*
+*Real-time `nvtop` capture during local 27B parameter LLM inference: **MEM 8001 MHz**, **GPU 1890 MHz**, **Power: 219W / 220W**, **15.11 GiB / 16.00 GiB VRAM allocated (97%)**, **GPU Util: 97%**.*
 
 ---
 
@@ -71,7 +71,7 @@ Operating at 8001 MHz across its 256-bit bus, the modded RTX 3070 reaches **512.
 
 We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (GSQ-RCO / IQ3_M)`** with a **65,536 (64k) Context Window** via Ollama / llama.cpp on Linux Mint 21.3 (Kernel 6.8, Driver 615.71.09-open).
 
-* **Model Footprint:** **15,499 MiB (15.5 GB VRAM allocated)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
+* **Model Footprint:** **15,499 MiB (15.11 GiB VRAM allocated / 97%)**. This model **instantly causes Out-Of-Memory (OOM) on any stock 8GB RTX 3070**.
 
 ![Qwen 27B Speedup](assets/qwen_27b_iq3m_speedup_en.png)
 

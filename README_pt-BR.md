@@ -27,10 +27,10 @@ Desenvolvido e validado pela **Nines Lab** (Brasil 🇧🇷).
 
 ---
 
-## 📸 Prova de Conceito: 15.5 GB de VRAM @ 8001 MHz & 219W em Carga Máxima
+## 📸 Prova de Conceito: 15.11 GiB de VRAM @ 8001 MHz & 219W em Carga Máxima
 
 ![Verificação no nvtop a 8001MHz](assets/nvtop_8001mhz_proof.jpg)
-*Captura em tempo real no `nvtop` durante inferência pesada de modelo LLM de 27B: **MEM 8001 MHz**, **GPU 1890 MHz**, **Consumo: 219W / 220W**, **15.11 GB / 16.00 GB de VRAM alocados**, **Uso da GPU: 97%**.*
+*Captura em tempo real no `nvtop` durante inferência pesada de modelo LLM de 27B: **MEM 8001 MHz**, **GPU 1890 MHz**, **Consumo: 219W / 220W**, **15.11 GiB / 16.00 GiB de VRAM alocados (97%)**, **Uso da GPU: 97%**.*
 
 ---
 
@@ -71,7 +71,7 @@ Rodando a 8001 MHz no barramento de 256 bits, a RTX 3070 modificada atinge **512
 
 Avaliamos a performance real de geração de tokens utilizando o modelo **`Qwen 3.8 27B Uncensored (GSQ-RCO / IQ3_M)`** com **Janela de Contexto de 65.536 tokens (64k)** via Ollama / llama.cpp no Linux Mint 21.3 (Kernel 6.8, Driver 615.71.09-open).
 
-* **Consumo de VRAM:** **15.499 MiB (15.5 GB de VRAM alocados)**. Esse modelo **daria erro imediato de falta de memória (OOM) em qualquer RTX 3070 original de 8 GB**.
+* **Consumo de VRAM:** **15.499 MiB (15.11 GiB de VRAM alocados / 97%)**. Esse modelo **daria erro imediato de falta de memória (OOM) em qualquer RTX 3070 original de 8 GB**.
 
 ![Aceleração no Qwen 27B](assets/qwen_27b_iq3m_speedup_pt.png)
 
