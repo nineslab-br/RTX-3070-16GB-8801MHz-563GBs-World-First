@@ -42,7 +42,7 @@ The GeForce RTX 3070 reference design ships with 8 GB of 14 Gbps GDDR6. By repla
 However, running this mod on desktop cards reveals architectural constraints:
 1. **The Factory VBIOS Flaw:** OEM BIOSes (such as Galax 1-Click OC) copied 8GB timing tables for all low/intermediate P-states (`WR_RCD=1` on P8 405 MHz, `WR_RCD=2` & 4-cycle turnaround on P5 810 MHz, `CL=20` on P3 5001 MHz), causing video decoding (NVDEC) and idle write collisions.
 2. **The Hardware Root of Trust Constraint:** Ampere GA104 Falcon SEC2 processor validates cryptographic RSA/ECC signatures on cold boot. Flashing modified physical EEPROM images bricks the card (Code 43 / No POST).
-3. **The Shadow Memory Discovery:** Complete PCI BAR0/BAR1 reverse-engineering scans (probing all 8 GiB of mapped VRAM) proved that the GPU Falcon PMU decodes timings directly into internal silicon registers (`BAR0+0x900000` to `0x9A0000`) on cold boot; **no raw shadow table exists in VRAM**.
+3. **Infeasibility of Runtime VRAM Timing Injection (In-Memory Table Hypothesis Refuted):** Exhaustive PCIe BAR0/BAR1 reverse-engineering scans across all 8 GiB of mapped VRAM verified whether timing structures could be patched in memory at runtime. The analysis proved that the Falcon PMU decodes timings directly from physical SPI ROM into internal silicon registers (`BAR0+0x900000` to `0x9A0000`) on cold boot, confirming that no raw timing tables reside in VRAM for software overrides.
 
 ### The Engineering Solution (Scenario B):
 * The Samsung **`K4ZAF325BM-HC16`** chips are factory-certified by Samsung for **16 Gbps (8000 MHz)** at stock 1.35V.
