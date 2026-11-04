@@ -9,7 +9,7 @@
 [![VRAM: 16 GB RX 6800 Donor](https://img.shields.io/badge/VRAM-16%20GB%20Samsung%20HC16%20(RX%206800%20Donor)-8b5cf6.svg)]()
 [![Bandwidth: 563 GB/s](https://img.shields.io/badge/Bandwidth-563.2%20GB%2Fs%20(8801%20MHz)-10b981.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![YouTube Video Validation](https://img.shields.io/badge/YouTube-Video%20Validation%20(8801%20MHz)-red.svg?logo=youtube)](https://www.youtube.com/watch?v=8orMRzMfpoQ)
+[![YouTube Video Validation](https://img.shields.io/badge/YouTube-Video%20Validation%20(pt--BR)-red.svg?logo=youtube)](https://www.youtube.com/watch?v=8orMRzMfpoQ)
 
 Engineering documentation, reverse-engineering findings, control scripts, and real-world LLM benchmarks for the **16GB Modded NVIDIA GeForce RTX 3070** running at **8801 MHz (17.6 Gbps / 563.2 GB/s)** on Linux.
 
@@ -108,7 +108,7 @@ We verified 3D graphics stability using **Unigine Superposition** running at **8
     <img src="https://img.youtube.com/vi/8orMRzMfpoQ/maxresdefault.jpg" alt="RTX 3070 16GB @ 8801 MHz Video Validation" width="850">
   </a>
   <br>
-  <em>▶️ <b>Click the image above to watch the live benchmark validation on YouTube</b> (Unigine Superposition @ 8801 MHz & power modes demonstration).</em>
+  <em>▶️ <b>Click the image above to watch the live benchmark validation on YouTube</b> (Audio in Portuguese / Unigine Superposition @ 8801 MHz & power modes demonstration).</em>
 </p>
 
 | Resolution / Preset | Official Score | Average FPS | Verification Link |
