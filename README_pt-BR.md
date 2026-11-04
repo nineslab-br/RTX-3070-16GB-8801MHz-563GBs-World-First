@@ -9,6 +9,7 @@
 [![VRAM: 16 GB RX 6800 Doadora](https://img.shields.io/badge/VRAM-16%20GB%20Samsung%20HC16%20(Doadora%20RX%206800)-8b5cf6.svg)]()
 [![Largura de Banda: 563 GB/s](https://img.shields.io/badge/Banda-563.2%20GB%2Fs%20(8801%20MHz)-10b981.svg)]()
 [![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow.svg)](LICENSE)
+[![Validação em Vídeo no YouTube](https://img.shields.io/badge/YouTube-Valida%C3%A7%C3%A3o%20em%20V%C3%ADdeo%20(8801%20MHz)-red.svg?logo=youtube)](https://www.youtube.com/watch?v=8orMRzMfpoQ)
 
 Documentação técnica de engenharia reversa, scripts, ferramentas de controle e benchmarks reais de inferência de LLMs para a **GeForce RTX 3070 modificada para 16 GB** operando em **8801 MHz (17.6 Gbps nominais / 563.2 GB/s)** no Linux.
 
@@ -102,6 +103,8 @@ Avaliamos a performance real de geração de tokens utilizando o modelo **`Qwen 
 
 Validamos a estabilidade 3D contínua da placa no **Unigine Superposition** operando a **8801 MHz (563.2 GB/s)**:
 
+🎥 **Assista à Demonstração e Validação em Vídeo no YouTube:** [RTX 3070 16GB @ 8801 MHz — Benchmark Unigine Superposition & Modos de Energia](https://www.youtube.com/watch?v=8orMRzMfpoQ)
+
 | Resolução / Preset | Pontuação Oficial | FPS Médio | Validação Oficial |
 | :--- | :---: | :---: | :--- |
 | **1080p EXTREME** | **7.113 pontos** | 53.20 FPS | 🔗 [Submissão Certificada no HWBOT](https://hwbot.org/submission/6092224) |
@@ -116,6 +119,21 @@ Validamos a estabilidade 3D contínua da placa no **Unigine Superposition** oper
 > 2. **Inteligência Artificial Local Massiva:** Carrega modelos densos de 27B (como o Qwen 27B com contexto total de 64k alocando 15.56 GB de VRAM) que seriam impossíveis em uma 3070 original.
 > 3. **Eficiência e Durabilidade:** Tudo isso dentro do projeto térmico e elétrico original da placa (220W a 1.35V), fria, silenciosa e com o controlador PHY protegido.
 
+
+## 🏆 Comparativo Arquitetural: Recordes no Chip GA104 (GDDR6)
+
+Para fins de total rigor técnico e transparência histórica dentro da família de chips **GA104 (barramento de 256 bits)**, a tabela abaixo posiciona este projeto em relação às marcas mundiais e outros projetos de destaque da comunidade:
+
+| GPU / Variante | Projeto / Autoria | VRAM / Módulos | Clock QDR (Efetivo) | Largura de Banda | Categoria e Status Operacional |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **RTX 3070 16 GB (Mod Desktop)** | **Nines Lab - Brazil (Este Projeto)** | **16 GB Samsung HC16** | **8801 MHz (17.6 Gbps)** | **563.26 GB/s** | 🏆 **World First na RTX 3070 16GB — 100% Estável em Cargas 3D e Linux** |
+| **RTX 3070 16 GB (Pico Extremo)** | **Nines Lab - Brazil (Este Projeto)** | **16 GB Samsung HC16** | **9011 MHz (18.02 Gbps)**| **576.70 GB/s** | 🔥 **Pico de Benchmark / Suicide Run (Completou Superposition no limiar físico do silício)** |
+| **RTX 3060 Ti 16 GB (Mod Desktop)**| Paulo Gomes & @areaburti | 16 GB Samsung HC16 | 9000 MHz (18.0 Gbps) | 576.00 GB/s | Pico histórico em benchmark no GA104 modificado (variante 3060 Ti) |
+| **RTX 3070 8 GB (Topo Global HWBOT)**| Overclockers de Elite HWBOT | 8 GB Originais HC14 | 8100–8300 MHz | 518.4–531.2 GB/s | Limite físico dos chips originais de 14 Gbps (mesmo sob refrigeração extrema) |
+| **RTX 3070 16 GB (Mods Anteriores)** | VIK-on, Paulo Gomes, GPU Solutions | 16 GB HC14 / HC16 | 7000–8000 MHz | 448.0–512.0 GB/s | Mods de validação de capacidade em 14 Gbps stock ou clock nominal JEDEC (16 Gbps) |
+
+> **Definição de Estabilidade:**  
+> Na engenharia de hardware e overclocking competitivo, **8801 MHz (563.26 GB/s)** é o nosso **padrão oficial 100% estável para uso diário** (passa em baterias consecutivas do Superposition, cargas massivas de IA com contexto saturado e jogos 3D sem nenhum erro de driver/Xid). A marca de **9011 MHz (576.7 GB/s)** representa um **pico experimental de benchmark**, operando no limiar absoluto do controlador onde o teste do Superposition é concluído com sucesso.
 ---
 
 ## ⚙️ Modos de Energia: Prós, Contras e Armadilhas (Pitfalls)

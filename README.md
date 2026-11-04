@@ -9,6 +9,7 @@
 [![VRAM: 16 GB RX 6800 Donor](https://img.shields.io/badge/VRAM-16%20GB%20Samsung%20HC16%20(RX%206800%20Donor)-8b5cf6.svg)]()
 [![Bandwidth: 563 GB/s](https://img.shields.io/badge/Bandwidth-563.2%20GB%2Fs%20(8801%20MHz)-10b981.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![YouTube Video Validation](https://img.shields.io/badge/YouTube-Video%20Validation%20(8801%20MHz)-red.svg?logo=youtube)](https://www.youtube.com/watch?v=8orMRzMfpoQ)
 
 Engineering documentation, reverse-engineering findings, control scripts, and real-world LLM benchmarks for the **16GB Modded NVIDIA GeForce RTX 3070** running at **8801 MHz (17.6 Gbps / 563.2 GB/s)** on Linux.
 
@@ -102,6 +103,8 @@ We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (
 
 We verified 3D graphics stability using **Unigine Superposition** running at **8801 MHz (563.2 GB/s)**:
 
+🎥 **Watch the Full Video Benchmark & Validation on YouTube:** [RTX 3070 16GB @ 8801 MHz — Unigine Superposition & Power Modes Demo](https://www.youtube.com/watch?v=8orMRzMfpoQ)
+
 | Resolution / Preset | Official Score | Average FPS | Verification Link |
 | :--- | :---: | :---: | :--- |
 | **1080p EXTREME** | **7,113 points** | 53.20 FPS | 🔗 [Certified HWBOT Submission](https://hwbot.org/submission/6092224) |
@@ -116,6 +119,21 @@ We verified 3D graphics stability using **Unigine Superposition** running at **8
 > 2. **Massive Local AI Workloads:** Runs heavy 27B parameter LLMs (such as Qwen 27B with a full 64k context window allocating 15.56 GB VRAM) that are completely out of reach for a stock 8GB card.
 > 3. **Efficiency & Component Longevity:** Delivers all of this within the native 220W TDP at standard 1.35V, keeping the card remarkably cool and protecting the memory PHY.
 
+
+## 🏆 Architecture Comparison: GA104 (GDDR6) World Standings
+
+For technical transparency across the **GA104 (256-bit bus)** GPU family, the table below positions this project against historical benchmark submissions and prominent community mods:
+
+| GPU / Variant | Project / Author | Memory / Chips | Clock QDR (Effective) | Memory Bandwidth | Category & Operational Status |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **RTX 3070 16 GB (Desktop Mod)** | **Nines Lab - Brazil (This Project)** | **16 GB Samsung HC16** | **8801 MHz (17.6 Gbps)** | **563.26 GB/s** | 🏆 **World First 16GB RTX 3070 — 100% Rock-Solid Stable (3D & Linux)** |
+| **RTX 3070 16 GB (Extreme Peak)** | **Nines Lab - Brazil (This Project)** | **16 GB Samsung HC16** | **9011 MHz (18.02 Gbps)**| **576.70 GB/s** | 🔥 **Benchmark Peak / Suicide Run (Completed Superposition run at silicon threshold)** |
+| **RTX 3060 Ti 16 GB (Desktop Mod)**| Paulo Gomes & @areaburti | 16 GB Samsung HC16 | 9000 MHz (18.0 Gbps) | 576.00 GB/s | Landmark GA104 benchmark peak on 3060 Ti variant (Superposition pass) |
+| **RTX 3070 8 GB (Global HWBOT Top)** | Elite HWBOT Overclockers | 8 GB Factory HC14 | 8100–8300 MHz | 518.4–531.2 GB/s | Factory 14 Gbps silicon limit on 8GB cards (even under sub-ambient cooling) |
+| **RTX 3070 16 GB (Prior Modders)** | VIK-on, Paulo Gomes, GPU Solutions | 16 GB HC14 / HC16 | 7000–8000 MHz | 448.0–512.0 GB/s | Standard capacity mods running factory 14 Gbps or JEDEC 16 Gbps speeds |
+
+> **Stability Definition:**  
+> In competitive hardware engineering, **8801 MHz (563.26 GB/s)** represents our **100% stable daily standard** (passes continuous runs of Superposition, full LLM context loads, and 3D gaming with zero Xid/driver drops). The **9011 MHz (576.7 GB/s)** milestone represents an **experimental benchmark peak** operating at the physical edge of the memory controller where individual benchmark runs complete successfully.
 ---
 
 ## ⚙️ Operating Modes: Pros, Cons & Pitfalls
