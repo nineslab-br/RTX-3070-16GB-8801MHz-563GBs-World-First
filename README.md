@@ -103,7 +103,13 @@ We evaluated local LLM generation performance using **`Qwen 3.8 27B Uncensored (
 
 We verified 3D graphics stability using **Unigine Superposition** running at **8801 MHz (563.2 GB/s)**:
 
-🎥 **Watch the Full Video Benchmark & Validation on YouTube:** [RTX 3070 16GB @ 8801 MHz — Unigine Superposition & Power Modes Demo](https://www.youtube.com/watch?v=8orMRzMfpoQ)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=8orMRzMfpoQ" target="_blank">
+    <img src="https://img.youtube.com/vi/8orMRzMfpoQ/maxresdefault.jpg" alt="RTX 3070 16GB @ 8801 MHz Video Validation" width="850">
+  </a>
+  <br>
+  <em>▶️ <b>Click the image above to watch the live benchmark validation on YouTube</b> (Unigine Superposition @ 8801 MHz & power modes demonstration).</em>
+</p>
 
 | Resolution / Preset | Official Score | Average FPS | Verification Link |
 | :--- | :---: | :---: | :--- |

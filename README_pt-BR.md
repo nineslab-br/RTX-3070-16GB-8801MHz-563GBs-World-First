@@ -103,7 +103,13 @@ Avaliamos a performance real de geração de tokens utilizando o modelo **`Qwen 
 
 Validamos a estabilidade 3D contínua da placa no **Unigine Superposition** operando a **8801 MHz (563.2 GB/s)**:
 
-🎥 **Assista à Demonstração e Validação em Vídeo no YouTube:** [RTX 3070 16GB @ 8801 MHz — Benchmark Unigine Superposition & Modos de Energia](https://www.youtube.com/watch?v=8orMRzMfpoQ)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=8orMRzMfpoQ" target="_blank">
+    <img src="https://img.youtube.com/vi/8orMRzMfpoQ/maxresdefault.jpg" alt="Validação em Vídeo da RTX 3070 16GB a 8801 MHz" width="850">
+  </a>
+  <br>
+  <em>▶️ <b>Clique na imagem acima para assistir à validação ao vivo no YouTube</b> (Execução do Unigine Superposition a 8801 MHz e demonstração dos modos de energia).</em>
+</p>
 
 | Resolução / Preset | Pontuação Oficial | FPS Médio | Validação Oficial |
 | :--- | :---: | :---: | :--- |
