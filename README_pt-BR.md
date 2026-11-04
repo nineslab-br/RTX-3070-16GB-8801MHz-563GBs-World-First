@@ -129,9 +129,9 @@ Disponibilizamos três perfis nativos:
 * **Contras:** Performance severamente limitada pela largura de banda reduzida de 25.9 GB/s. A reprodução de vídeos sofre perda de quadros (baixo FPS), jogos rodam com taxa de quadros injogável e a taxa de tokens em LLMs despenca.
 * **Comportamento na Prática:** O sistema permanece **100% estável e não trava nem crasha a placa**, apenas opera com lentidão proposital devido à falta de largura de banda. Ideal para deixar o PC ligado fazendo downloads, lendo documentos/código, repouso noturno ou suspensão S3. Ao abrir vídeos em alta resolução, jogos ou iniciar inferência de IA, basta alternar para `gpu-perf` ou `gpu-ultra`.
 
-### 2. `gpu-perf` — 6801 MHz (Modo de Segurança Diário)
+### 2. `gpu-perf` — 8801 MHz (Modo de Performance)
 * **Comando:** `gpu-perf`
-* **Clock de Memória:** 6801 MHz | **Banda:** 435.2 GB/s | **Consumo Idle:** ~40.0 W | **Temp:** ~30°C
+* **Clock de Memória:** 8801 MHz | **Banda:** 563.2 GB/s | **Consumo Idle:** ~40.0 W | **Temp:** ~30°C
 * **Prós:** Estabilidade de rocha de 100% sobre as tabelas originais da Galax (`Timing ID 38`); roda qualquer jogo, kernel de computação e vídeo 4K sem risco de colisão de barramento.
 * **Contras:** Consumo contínuo de ~40W em repouso se deixado ligado sem uso.
 * **Armadilhas (Pitfalls):** Consome ~28W a mais que o `gpu-eco`. Boa prática: volte para o `gpu-eco` ao se afastar da mesa de trabalho.
@@ -152,7 +152,7 @@ Todos os scripts e ferramentas estão organizados na pasta [`scripts/`](scripts/
 | Arquivo | Função |
 | :--- | :--- |
 | **[`scripts/gpu-eco`](scripts/gpu-eco)** | Trava a memória em 405 MHz (P8) para trabalho leve, repouso e suspensão S3. |
-| **[`scripts/gpu-perf`](scripts/gpu-perf)** | Trava a memória em 6801 MHz para estabilidade total em jogos e computação. |
+| **[`scripts/gpu-perf`](scripts/gpu-perf)** | Trava a memória em 8801 MHz para estabilidade total em jogos, computação e IA. |
 | **[`scripts/gpu-ultra`](scripts/gpu-ultra)** | Trava a memória em 8801 MHz (563.2 GB/s) para máxima velocidade em IA e 4K. |
 | **[`scripts/setup_nines_modes.sh`](scripts/setup_nines_modes.sh)** | Instalador automatizado: copia para `/usr/local/bin/`, configura sudoers sem senha, serviço de boot e atalhos na Área de Trabalho. |
 | **[`scripts/patch_kernel_cuda_p0.patch`](scripts/patch_kernel_cuda_p0.patch)** | Patch para o driver de kernel aberto (`kern_cuda_limit.c`) desativando a redução artificial para P2 em CUDA. |

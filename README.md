@@ -129,9 +129,9 @@ We provide three native software-controlled power modes:
 * **Cons:** Severe throughput limitation due to the narrow 25.9 GB/s memory bandwidth. Video playback suffers from frame drops (low FPS), games run with unplayable framerates, and LLM token generation drops to a crawl.
 * **Real-World Behavior:** The system remains **100% rock-solid and will NOT crash the card**, operating with deliberate slowness purely due to bandwidth constraints. Ideal for background downloading, reading documents/code, overnight idle, or S3 suspend. When playing high-resolution video, gaming, or running local AI, simply switch to `gpu-perf` or `gpu-ultra`.
 
-### 2. `gpu-perf` — 6801 MHz (Safety Performance State)
+### 2. `gpu-perf` — 8801 MHz (Performance State)
 * **Command:** `gpu-perf`
-* **Memory Clock:** 6801 MHz | **Bandwidth:** 435.2 GB/s | **Power Draw:** ~40.0 W | **Temp:** ~30°C
+* **Memory Clock:** 8801 MHz | **Bandwidth:** 563.2 GB/s | **Power Draw:** ~40.0 W | **Temp:** ~30°C
 * **Pros:** 100% rock-solid stability on factory P0 timing tables (`Timing ID 38`); runs any game, compute kernel, and 4K video player with zero risk of bus collision.
 * **Cons:** Idles at ~40W continuously if left active when away from the PC.
 * **Pitfalls:** Consumes ~28W more than `gpu-eco` when idle. Best practice: switch back to `gpu-eco` when stepping away from the desk.
@@ -152,7 +152,7 @@ All tools and scripts are located in the [`scripts/`](scripts/) directory:
 | File | Purpose |
 | :--- | :--- |
 | **[`scripts/gpu-eco`](scripts/gpu-eco)** | Locks memory to 405 MHz (P8) for idle, work, and S3 suspend. |
-| **[`scripts/gpu-perf`](scripts/gpu-perf)** | Locks memory to 6801 MHz for stable everyday gaming and compute. |
+| **[`scripts/gpu-perf`](scripts/gpu-perf)** | Locks memory to 8801 MHz for stable everyday gaming, compute, and AI. |
 | **[`scripts/gpu-ultra`](scripts/gpu-ultra)** | Locks memory to 8801 MHz (563.2 GB/s) for maximum AI inference and 4K gaming. |
 | **[`scripts/setup_nines_modes.sh`](scripts/setup_nines_modes.sh)** | Automated setup: installs commands to `/usr/local/bin/`, configures passwordless sudoers rules, boot service, and desktop shortcuts. |
 | **[`scripts/patch_kernel_cuda_p0.patch`](scripts/patch_kernel_cuda_p0.patch)** | Kernel driver patch for `open-gpu-kernel-modules` (`kern_cuda_limit.c`) to disable CUDA P2 downclocking. |

@@ -84,8 +84,8 @@ EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=GPU Modo Performance (6801 MHz)
-Comment=Sobe a RTX 3070 para 6801 MHz (435 GB/s)
+Name=GPU Modo Performance (8801 MHz)
+Comment=Sobe a RTX 3070 para 8801 MHz (563.2 GB/s)
 Exec=/usr/local/bin/gpu-perf
 Icon=power-profile-balanced
 Terminal=true
